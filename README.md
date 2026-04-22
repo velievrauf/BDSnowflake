@@ -29,7 +29,7 @@ docker exec -it lab2_clickhouse clickhouse-client --query "CREATE DATABASE IF NO
    - Импортируйте все 10 файлов `MOCK_DATA.csv` из папки `data/` в таблицу `raw_data_import`.
 
 2. **Работа с Apache Spark (Jupyter Notebook):**
-   - Перейдите в браузере по адресу `http://localhost:8888`, найдите токен в логах.
+   - Перейдите в браузере по адресу `http://localhost:8888`, найдите токен в логах командой docker logs lab2_spark.
    - Откройте файл `spark_etl_lab2.ipynb`.
    - Запустите код.
 
