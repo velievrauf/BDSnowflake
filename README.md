@@ -16,7 +16,7 @@
 docker compose up -d
 ```
 
-![alt text](image.png)
+<img width="1460" height="233" alt="docker_running" src="https://github.com/user-attachments/assets/e3a679eb-ffa1-427b-a5ad-ab46a2bd75b2" />
 
 После запуска необходимо создать базу данных в ClickHouse:
 ```bash
@@ -55,8 +55,8 @@ docker exec -it lab2_clickhouse clickhouse-client --query "CREATE DATABASE IF NO
 1.  Подключитесь к **PostgreSQL** (порт 5433) и убедитесь, что таблица `fact_sales` содержит **10 000** записей.
 2.  Подключитесь к **ClickHouse** (порт 8123/9000) и проверьте наличие данных в 6 таблицах отчетов в базе `reports_db`.
 
-![alt text](image-1.png)
-![alt text](image-2.png)
+<img width="787" height="415" alt="report_sample" src="https://github.com/user-attachments/assets/1c1eec2f-dd50-44de-b845-8176bc4895a7" />
+<img width="942" height="507" alt="report_sample2" src="https://github.com/user-attachments/assets/50c40306-c9fe-4a5d-9f44-ddfde0d70727" />
 
 ## Вывод
 
