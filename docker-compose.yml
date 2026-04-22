@@ -32,6 +32,7 @@ services:
     user: root 
     environment:
       JUPYTER_ENABLE_LAB: "yes"
+      JUPYTER_TOKEN: ""
     ports:
       - "8888:8888" 
     volumes:
