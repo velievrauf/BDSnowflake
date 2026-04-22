@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  postgres_db:
+    image: postgres:15
+    container_name: lab2_postgres
+    environment:
+      POSTGRES_USER: adm
+      POSTGRES_PASSWORD: 4321
+      POSTGRES_DB: abd_snowflake_db
+    ports:
+      - "5433:5432" 
+    networks:
+      - data_network
+
+  clickhouse_db:
+    image: clickhouse/clickhouse-server:latest
+    container_name: lab2_clickhouse
+    environment:
+      CLICKHOUSE_USER: default
+      CLICKHOUSE_PASSWORD: 4321
+      CLICKHOUSE_DB: reports_db
+    ports:
+      - "8123:8123" 
+      - "9000:9000" 
+    networks:
+      - data_network
+
+  spark_jupyter:
+    image: jupyter/pyspark-notebook:latest
+    container_name: lab2_spark
+    user: root 
+    environment:
+      JUPYTER_ENABLE_LAB: "yes"
+    ports:
+      - "8888:8888" 
+    volumes:
+      - ./work:/home/jovyan/work 
+    networks:
+      - data_network
+
+networks:
+  data_network:
+    driver: bridge
