@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:15
+    container_name: postgres_lab
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 4321
+      POSTGRES_DB: petshop_db
+    ports:
+      - "5433:5432"  
+    volumes:
+      - ./data:/data
+      - ./import_raw_data.sql:/docker-entrypoint-initdb.d/01_import.sql
+      - ./create_snowflake_schema.sql:/docker-entrypoint-initdb.d/02_ddl.sql
+      - ./data_migration.sql:/docker-entrypoint-initdb.d/03_dml.sql
